@@ -20,7 +20,7 @@ export function FullWidthSection({
       {...props}
     >
       {atmosphere}
-      <div className={cn("section-frame px-5 md:px-8 lg:px-10", innerClassName)}>{children}</div>
+      <div className={cn("section-frame px-4 sm:px-5 md:px-8 lg:px-10", innerClassName)}>{children}</div>
     </section>
   );
 }

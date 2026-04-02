@@ -8,13 +8,13 @@ import { EVENTS_DATA, type EventArchiveItem, type EventPlaceholder } from "@/dat
 
 export default function EventsPage() {
   return (
-    <div className="page-stack relative">
+    <div className="page-stack page-stack--flush relative">
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-x-0 top-0 h-[36rem] blur-[120px] bg-[radial-gradient(circle_at_78%_12%,rgba(255,140,110,0.16),transparent_44%),radial-gradient(circle_at_20%_18%,rgba(156,128,190,0.1),transparent_42%)] dark:bg-[radial-gradient(circle_at_78%_12%,rgba(255,110,80,0.12),transparent_44%),radial-gradient(circle_at_20%_18%,rgba(108,96,170,0.08),transparent_42%)]" />
         <div className="absolute inset-x-0 top-[22rem] h-[74rem] blur-[140px] bg-[radial-gradient(circle_at_18%_22%,rgba(236,140,150,0.14),transparent_30%),radial-gradient(circle_at_82%_36%,rgba(255,155,102,0.14),transparent_34%),radial-gradient(circle_at_52%_68%,rgba(134,120,198,0.07),transparent_36%)] dark:bg-[radial-gradient(circle_at_18%_22%,rgba(214,110,150,0.12),transparent_30%),radial-gradient(circle_at_82%_36%,rgba(255,120,80,0.12),transparent_34%),radial-gradient(circle_at_52%_68%,rgba(104,92,168,0.05),transparent_36%)]" />
       </div>
       <ScrollReveal>
-        <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden -mt-24 pt-24 md:-mt-28 md:pt-28 lg:-mt-32 lg:pt-32">
+        <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden">
           <div className="pointer-events-none absolute inset-0 -z-10">
             <Image
               src="/images/events/team.png"
@@ -29,14 +29,13 @@ export default function EventsPage() {
             <div className="absolute inset-0 bg-gradient-to-b from-black/12 via-transparent to-black/10 dark:from-black/22 dark:to-black/16" />
             <div className="absolute inset-0 blur-[120px] bg-[radial-gradient(circle_at_78%_18%,rgba(255,140,110,0.16),transparent_26%),radial-gradient(circle_at_88%_56%,rgba(236,140,150,0.12),transparent_30%),radial-gradient(circle_at_60%_80%,rgba(238,176,126,0.12),transparent_28%)] dark:bg-[radial-gradient(circle_at_78%_18%,rgba(255,110,80,0.13),transparent_26%),radial-gradient(circle_at_88%_56%,rgba(214,110,150,0.1),transparent_30%),radial-gradient(circle_at_60%_80%,rgba(238,156,106,0.1),transparent_28%)]" />
           </div>
-          <div className="section-frame relative z-10 min-h-[420px] max-w-[80rem] px-6 pb-16 pt-20 md:min-h-[470px] md:px-10 md:pb-20 md:pt-24 lg:min-h-[500px] lg:px-12 lg:pb-20 lg:pt-28">
+          <div className="section-frame relative z-10 flex min-h-[500px] items-end px-5 pb-14 pt-28 sm:px-6 md:min-h-[620px] md:px-8 md:pb-20 md:pt-32 lg:min-h-[680px] lg:px-10 lg:pb-24 lg:pt-36">
             <div className="section-stack gap-5">
-              <h1 className="max-w-[12ch] text-balance text-4xl font-semibold text-white md:text-5xl lg:text-6xl">
+              <h1 className="max-w-[12ch] text-balance text-[2.5rem] font-semibold leading-[1] text-white md:text-5xl lg:text-6xl">
                 Moments that shaped the EIC calendar.
               </h1>
-              <p className="section-copy max-w-[64ch] text-white/85">
-                This page documents some of the sessions, simulations, and interactive experiences
-                that defined EIC&apos;s activity on campus.
+              <p className="max-w-[64ch] text-base leading-7 text-white md:text-lg md:leading-8">
+              Stay updated with hackathons, speaker sessions, competitions, and networking opportunities happening across campus.
               </p>
             </div>
           </div>
@@ -56,8 +55,8 @@ export default function EventsPage() {
             <div
               className={
                 index % 2 === 0
-                  ? "section-frame relative z-10 grid gap-8 px-5 md:px-8 lg:grid-cols-[0.98fr_1.02fr] lg:items-center lg:px-10"
-                  : "section-frame relative z-10 grid gap-8 px-5 md:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:px-10"
+                  ? "section-frame relative z-10 grid gap-6 px-4 sm:px-5 md:gap-8 md:px-8 lg:grid-cols-[0.98fr_1.02fr] lg:items-center lg:px-10"
+                  : "section-frame relative z-10 grid gap-6 px-4 sm:px-5 md:gap-8 md:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:px-10"
               }
             >
               <div className={index % 2 === 0 ? "space-y-6" : "space-y-6 lg:order-2"}>
@@ -122,7 +121,7 @@ function EventMediaCard({ event }: { event: EventArchiveItem }) {
 function EventImageCard({ src, alt }: { src: string; alt: string }) {
   return (
     <div className="overflow-hidden rounded-[1.75rem] border border-border/60 bg-surface/62">
-      <div className="relative min-h-[320px] md:min-h-[360px]">
+      <div className="relative min-h-[240px] md:min-h-[360px]">
         <Image src={src} alt={alt} fill sizes="(min-width: 1024px) 42vw, 100vw" className="object-cover" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(0,0,0,0.06)_40%,rgba(0,0,0,0.18)_100%)]" />
       </div>
@@ -147,7 +146,7 @@ function EventSlideshow({
 
   return (
     <div className="overflow-hidden rounded-[1.75rem] border border-border/60 bg-surface/62">
-      <div className="relative min-h-[320px] md:min-h-[360px]">
+      <div className="relative min-h-[240px] md:min-h-[360px]">
         {images.map((image, imageIndex) => (
           <div
             key={image.src}
@@ -217,7 +216,7 @@ function EventImagePlaceholder({
 }) {
   return (
     <div className="overflow-hidden rounded-[1.75rem] border border-border/60 bg-surface/62">
-      <div className="relative min-h-[320px] border-b border-border/55 bg-[linear-gradient(145deg,rgba(255,255,255,0.12),rgba(255,255,255,0.02)_42%,rgba(0,0,0,0.14)_100%)] p-6 md:min-h-[360px] md:p-8">
+      <div className="relative min-h-[240px] border-b border-border/55 bg-[linear-gradient(145deg,rgba(255,255,255,0.12),rgba(255,255,255,0.02)_42%,rgba(0,0,0,0.14)_100%)] p-5 md:min-h-[360px] md:p-8">
         <div className="absolute inset-x-0 top-0 h-28 bg-[radial-gradient(circle_at_50%_0%,rgba(233,226,214,0.64),transparent_72%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(154,143,129,0.16),transparent_74%)]" />
         <div className="relative">
           <div className="text-xs uppercase tracking-[0.18em] text-muted">{placeholder.label}</div>

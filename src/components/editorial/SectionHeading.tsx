@@ -18,16 +18,16 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        "flex flex-col gap-3",
+        "flex flex-col gap-2.5 md:gap-3",
         align === "between" && "md:flex-row md:items-end md:justify-between",
         className,
       )}
     >
-      <div className="space-y-3">
+      <div className="space-y-2.5 md:space-y-3">
         {label ? (
           <div className="text-xs uppercase tracking-[0.18em] text-muted">{label}</div>
         ) : null}
-        <div className="text-2xl font-semibold text-text md:text-3xl">{title}</div>
+        <div className="text-[1.75rem] font-semibold leading-tight text-text sm:text-2xl md:text-3xl">{title}</div>
       </div>
       {subtitle ? <p className="section-copy text-sm md:text-base">{subtitle}</p> : null}
     </div>

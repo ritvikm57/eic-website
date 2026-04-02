@@ -30,10 +30,34 @@ export const TEAM_DATA: TeamCohort[] = [
     presidents: [
       {
         id: "archive-president-03",
-        name: "Previous President",
+        name: "Varuni Vangaveti",
         role: "President",
         pillars: [],
-        image: "/placeholders/portrait-stone.svg",
+        image: "/images/team/varuni.jpeg",
+      },
+    ],
+  },
+  {
+    year: "2022-23",
+    presidents: [
+      {
+        id: "archive-president-00",
+        name: "Geha Reddy",
+        role: "President",
+        pillars: [],
+        image: "/images/team/geha.jpeg",
+      },
+    ],
+  },
+  {
+    year: "2021-22",
+    presidents: [
+      {
+        id: "archive-president-2021",
+        name: "Keerthana Gottipati",
+        role: "President",
+        pillars: [],
+        image: "/images/team/keerthana.jpeg",
       },
     ],
   },

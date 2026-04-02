@@ -8,17 +8,17 @@ export function SectionNav({
   items: readonly { label: string; href: string }[];
 }) {
   return (
-    <section className="relative left-1/2 z-20 w-screen -translate-x-1/2 border-b border-border/50 bg-background/76 backdrop-blur-sm">
-      <div className="section-frame px-5 md:px-8 lg:px-10">
+    <section className="relative left-1/2 z-20 w-screen -translate-x-1/2 border-b border-border/10 bg-background/12 backdrop-blur-[6px]">
+      <div className="section-frame px-4 sm:px-5 md:px-8 lg:px-10">
         <nav
           aria-label="EntrepX sections"
-          className="flex gap-3 overflow-x-auto py-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex gap-2.5 overflow-x-auto py-3 md:gap-3 md:py-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {items.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="inline-flex shrink-0 items-center rounded-full border border-border/45 px-4 py-2 text-sm text-text/78 transition-colors hover:border-border/70 hover:bg-surface/36 hover:text-text"
+              className="inline-flex shrink-0 items-center rounded-full border border-border/35 bg-background/10 px-4 py-2 text-sm text-text/78 transition-colors hover:border-border/55 hover:bg-surface/18 hover:text-text"
             >
               {item.label}
             </Link>

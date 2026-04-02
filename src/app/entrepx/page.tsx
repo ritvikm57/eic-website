@@ -51,10 +51,17 @@ const GALLERY_SLIDES = [
 
 export default function EntrepxPage() {
   return (
-    <div className="page-stack page-stack--flush">
+    <div className="page-stack page-stack--flush relative">
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute left-1/2 top-[26rem] h-[56rem] w-[128rem] -translate-x-1/2 blur-[240px] bg-[radial-gradient(circle_at_18%_34%,rgba(236,145,155,0.12),transparent_22%),radial-gradient(circle_at_52%_48%,rgba(156,128,190,0.12),transparent_28%),radial-gradient(circle_at_82%_36%,rgba(255,176,126,0.08),transparent_22%)] dark:bg-[radial-gradient(circle_at_18%_34%,rgba(214,110,150,0.1),transparent_22%),radial-gradient(circle_at_52%_48%,rgba(110,96,170,0.11),transparent_28%),radial-gradient(circle_at_82%_36%,rgba(238,156,106,0.07),transparent_22%)]" />
+
+        <div className="absolute left-1/2 top-[82rem] h-[58rem] w-[134rem] -translate-x-1/2 blur-[250px] bg-[radial-gradient(circle_at_76%_38%,rgba(236,145,155,0.11),transparent_22%),radial-gradient(circle_at_28%_44%,rgba(156,128,190,0.14),transparent_30%),radial-gradient(circle_at_60%_78%,rgba(255,176,126,0.08),transparent_24%)] dark:bg-[radial-gradient(circle_at_76%_38%,rgba(214,110,150,0.09),transparent_22%),radial-gradient(circle_at_28%_44%,rgba(110,96,170,0.12),transparent_30%),radial-gradient(circle_at_60%_78%,rgba(238,156,106,0.07),transparent_24%)]" />
+
+        <div className="absolute left-1/2 top-[132rem] h-[54rem] w-[126rem] -translate-x-1/2 blur-[245px] bg-[radial-gradient(circle_at_20%_46%,rgba(236,145,155,0.1),transparent_22%),radial-gradient(circle_at_72%_34%,rgba(156,128,190,0.12),transparent_28%),radial-gradient(circle_at_54%_74%,rgba(255,176,126,0.07),transparent_22%)] dark:bg-[radial-gradient(circle_at_20%_46%,rgba(214,110,150,0.08),transparent_22%),radial-gradient(circle_at_72%_34%,rgba(110,96,170,0.1),transparent_28%),radial-gradient(circle_at_54%_74%,rgba(238,156,106,0.06),transparent_22%)]" />
+      </div>
       <ScrollReveal>
-        <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden border-y border-border/45">
-          <div className="relative min-h-[620px] md:min-h-[680px]">
+        <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden">
+          <div className="relative min-h-[620px] md:min-h-[720px] lg:min-h-[760px]">
             <div className="absolute inset-0 -z-10">
               <Image
                 src="/images/entrepx/p1.JPG"
@@ -67,21 +74,18 @@ export default function EntrepxPage() {
             </div>
             <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(0,0,0,0.7),rgba(0,0,0,0.46),rgba(0,0,0,0.14))]" />
 
-            <div className="section-frame relative grid min-h-[620px] max-w-[80rem] items-center gap-14 px-6 pb-10 pt-24 md:min-h-[680px] md:px-10 md:pb-12 md:pt-28 lg:grid-cols-[1.02fr_0.98fr] lg:px-12">
-              <div className="max-w-[42rem] space-y-7">
+            <div className="section-frame relative grid min-h-[620px] items-center gap-8 px-5 pb-14 pt-28 sm:px-6 md:min-h-[720px] md:gap-14 md:px-8 md:pb-16 md:pt-32 lg:min-h-[760px] lg:grid-cols-[1.02fr_0.98fr] lg:px-10 lg:pb-20 lg:pt-36">
+              <div className="max-w-[42rem] space-y-4 md:space-y-7">
                 <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-white/72">
                   EntrepX
                   <span className="h-1 w-1 rounded-full bg-white/48" />
                   Flagship Event
                 </div>
-                <h1 className="max-w-[10ch] text-balance text-5xl font-semibold tracking-tight text-white md:text-6xl lg:text-[5rem] lg:leading-[0.95]">
-                  The flagship entrepreneurship platform at Mahindra University.
+                <h1 className="max-w-[10ch] text-balance text-[2.5rem] font-semibold leading-[0.94] tracking-tight text-white md:text-6xl lg:text-[5rem] lg:leading-[0.95]">
+                  EntrepX 2026
                 </h1>
-                <p className="max-w-[40rem] text-base leading-7 text-white/84 md:text-lg md:leading-8">
-                  EntrepX is Mahindra University&apos;s flagship entrepreneurship experience,
-                  bringing together founders, mentors, investors, industry experts, and student
-                  innovators through keynote addresses, panel discussions, startup showcases,
-                  workshops, and Startup Premier League sessions.
+                <p className="max-w-[40rem] text-sm leading-7 text-white/84 md:text-lg md:leading-8">
+                  Where ideas are challenged, refined, and brought to life.
                 </p>
 
                 <div className="flex flex-col gap-3 sm:flex-row">
@@ -141,15 +145,15 @@ export default function EntrepxPage() {
       </ScrollReveal>
 
       <ScrollReveal>
-        <FullWidthSection id="gallery" className="bg-surface/42 py-14">
+        <FullWidthSection id="gallery" className="py-12 md:py-14">
           <ImageSlider slides={GALLERY_SLIDES} />
         </FullWidthSection>
       </ScrollReveal>
 
       <ScrollReveal>
         <section id="why" className="section-stack">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div className="space-y-5">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-10">
+            <div className="space-y-4 md:space-y-5">
               <div className="section-kicker">Why EntrepX?</div>
               <h2 className="max-w-[14ch] text-balance text-3xl font-semibold text-text md:text-4xl">
                 Why the event matters beyond the day itself.
@@ -161,7 +165,7 @@ export default function EntrepxPage() {
               </p>
             </div>
 
-            <div className="grid gap-5 md:grid-cols-2">
+            <div className="grid gap-4 md:grid-cols-2 md:gap-5">
               {ENTREPX_DATA.WHY_POINTS.map((item) => (
                 <div key={item.title} className="border-l border-border/60 pl-5 md:pl-6">
                   <div className="text-base font-semibold text-text">{item.title}</div>
@@ -199,8 +203,8 @@ export default function EntrepxPage() {
       </ScrollReveal> */}
 
       <ScrollReveal>
-        <FullWidthSection className="bg-surface/32 py-14">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <FullWidthSection className="py-12 md:py-14">
+          <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div className="max-w-[52ch]">
               <div className="text-xs uppercase tracking-[0.18em] text-muted">Final step</div>
               <div className="mt-3 text-2xl font-semibold text-text md:text-3xl">

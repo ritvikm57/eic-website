@@ -84,7 +84,7 @@ export const EVENTS_DATA: readonly EventArchiveItem[] = [
     title: "Swipe Talk",
     meta: [
       { label: "Speaker", value: "Abhijit Vemuganti" },
-      { label: "Date and Time", value: "21 January 2026, 3:00 PM" },
+      { label: "Date", value: "21 January 2026" },
     ],
     body: [
       "The session featuring Abhijit Vemuganti offered an insightful glimpse into the journey of a successful entrepreneur in the fintech space. As the Co-Founder of Swipe, a Y-Combinator backed startup, he shared his experiences of building a company from the ground up, navigating uncertainties, and overcoming challenges along the way.",
@@ -109,12 +109,17 @@ export const EVENTS_DATA: readonly EventArchiveItem[] = [
   {
     id: "bankruptcy-bureau",
     title: "Bankruptcy Bureau",
-    meta: [{ label: "Date and Time", value: "18 February 2026, 3:00 PM" }],
+    meta: [{ label: "Date", value: "18 February 2026" }],
     body: [
       "The Bankruptcy Bureau was an engaging Mystery Rooms-style event that tested participants' analytical thinking and teamwork under pressure. The event began with a brief introduction, equipping teams with essential knowledge before they set off on their challenge.",
       "Participants navigated through multiple stages, uncovering hidden clues and moving from one location to another, each presenting a new round of puzzles to decode. As the difficulty increased, teams had to think critically, connect insights, and collaborate effectively to stay on track.",
       "The final stage required participants to compile their findings and submit their documents, simulating real-world decision-making. Overall, Bankruptcy Bureau offered a thrilling, immersive experience that blended strategy, problem-solving, and excitement.",
     ],
+    media: {
+      type: "image",
+      src: "/images/events/bankruptcy.jpeg",
+      alt: "Students participating in Spotlight event activities",
+    },
     placeholder: {
       label: "Event Photography",
       title: "Bankruptcy Bureau photo archive",

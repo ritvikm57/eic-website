@@ -25,6 +25,7 @@ export function EicFlow({
   const nodeHalo = inverted ? "rgba(255,206,156,0.14)" : "rgba(214,90,38,0.09)";
   const nodeOuter = inverted ? "rgba(255,255,255,0.42)" : "rgba(24,24,27,0.24)";
   const nodeInner = inverted ? "rgba(255,255,255,0.98)" : "rgba(24,24,27,0.94)";
+  const stepDot = inverted ? "bg-white/72" : "bg-text/72";
   const curvePoints = [
     { x: 46, y: 172 },
     { x: 188, y: 126 },
@@ -33,7 +34,7 @@ export function EicFlow({
   const curvePath = "M46 172Q118 164 188 126T330 72";
 
   return (
-    <div className={cn("space-y-5 md:space-y-6", className)}>
+    <div className={cn("space-y-4 md:space-y-5", className)}>
       <div className="relative">
         <svg
           viewBox="0 0 360 220"
@@ -84,28 +85,39 @@ export function EicFlow({
 
       <div
         className={cn(
-          "grid gap-4 border-t pt-4 md:grid-cols-3 md:gap-6",
+          "grid gap-4 border-t pt-4 md:grid-cols-3 md:gap-x-7 md:gap-y-5",
           inverted ? "border-white/14" : "border-border/70",
         )}
       >
         {steps.map((step) => (
-          <div key={step.title} className="space-y-1.5">
-            <div
-              className={cn(
-                "text-[11px] font-medium uppercase tracking-[0.22em]",
-                inverted ? "text-white/82" : "text-text/72",
-              )}
-            >
-              {step.title}
+          <div
+            key={step.title}
+            className="grid grid-cols-[0.875rem_minmax(0,1fr)] items-start gap-x-3.5"
+          >
+            <div className="flex justify-center pt-[0.32rem]">
+              <span
+                className={cn("inline-block h-1.5 w-1.5 rounded-full", stepDot)}
+                aria-hidden="true"
+              />
             </div>
-            <p
-              className={cn(
-                "max-w-[24ch] text-sm leading-6",
-                inverted ? "text-white/84" : "text-muted",
-              )}
-            >
-              {step.body}
-            </p>
+            <div className="space-y-1.5">
+              <div
+                className={cn(
+                  "text-[10px] font-medium uppercase tracking-[0.2em]",
+                  inverted ? "text-white/82" : "text-text/72",
+                )}
+              >
+                {step.title}
+              </div>
+              <p
+                className={cn(
+                  "max-w-[25ch] text-[0.9rem] leading-[1.55] md:max-w-none",
+                  inverted ? "text-white/84" : "text-muted",
+                )}
+              >
+                {step.body}
+              </p>
+            </div>
           </div>
         ))}
       </div>

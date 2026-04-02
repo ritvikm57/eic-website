@@ -38,42 +38,37 @@ const EXPERIENCE_FORMATS = [
 
 const JOURNEY_FLOW = [
   {
-    title: "Discover",
-    body: "Explore problems, startup stories, and possible starting points.",
+    title: "Exposure",
+    body: "Students encounter ideas, founders, and startup thinking across campus.",
   },
   {
-    title: "Build",
-    body: "Work with others, prototype ideas, and test them seriously.",
+    title: "Experimentation",
+    body: "Early concepts get tested through collaboration, feedback, and practical work.",
   },
   {
-    title: "Launch",
-    body: "Share work publicly through demos, reviews, and visible outcomes.",
+    title: "Momentum",
+    body: "The strongest work gains visibility, continuity, and room to grow.",
   },
 ] as const;
 
 const JOURNEY_STEPS = [
   {
-    number: "01",
     title: "Discover",
     body: "Explore real-world problems, startup stories, and emerging ideas through talks, hackathons, and peer discussions. This is where curiosity turns into intent.",
   },
   {
-    number: "02",
     title: "Build",
     body: "Turn ideas into action through hands-on sessions, team collaboration, and rapid prototyping. Experiment, fail fast, and iterate.",
   },
   {
-    number: "03",
     title: "Review",
     body: "Get feedback from mentors, peers, and experienced builders. Refine your ideas through critique, validation, and iteration.",
   },
   {
-    number: "04",
     title: "Showcase",
     body: "Present your work through demo days, Eureka evenings, and public platforms. Gain visibility, confidence, and recognition.",
   },
   {
-    number: "05",
     title: "Grow",
     body: "The strongest ideas evolve into ventures, collaborations, and long-term opportunities within the ecosystem.",
   },
@@ -134,7 +129,7 @@ export default function HomePage() {
       <ScrollReveal>
         <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden">
           <div className="pointer-events-none absolute -inset-x-24 -inset-y-28 bg-[radial-gradient(circle_at_18%_20%,rgba(236,170,132,0.02),transparent_24%),radial-gradient(circle_at_82%_18%,rgba(222,196,176,0.012),transparent_30%)] opacity-35 blur-[160px] dark:bg-[radial-gradient(circle_at_18%_20%,rgba(214,136,90,0.018),transparent_24%),radial-gradient(circle_at_82%_18%,rgba(168,136,116,0.012),transparent_30%)]" />
-          <div className="section-frame relative">
+          <div className="section-frame relative px-4 sm:px-5 md:px-8 lg:px-10">
             <div className="section-stack">
               <SectionHeading
                 label="Who We Are"
@@ -171,9 +166,9 @@ export default function HomePage() {
 
       <ScrollReveal>
         <section className="section-stack items-center text-center">
-          <div className="w-full max-w-[56rem] rounded-[2rem] bg-surface/52 px-7 py-10 md:px-12 md:py-14">
+          <div className="w-full max-w-[56rem] rounded-[2rem] bg-surface/52 px-5 py-7 sm:px-7 md:px-12 md:py-14">
             <div className="text-xs uppercase tracking-[0.18em] text-muted">Core statement</div>
-            <p className="mx-auto mt-5 max-w-[30ch] text-xl font-medium leading-9 text-text/94 md:text-[1.55rem] md:leading-10">
+            <p className="mx-auto mt-5 max-w-[30ch] text-lg font-medium leading-8 text-text/94 sm:text-xl sm:leading-9 md:text-[1.55rem] md:leading-10">
               Entrepreneurship goes beyond starting a business. It is about identifying
               challenges, thinking creatively, and building meaningful solutions that create
               impact.
@@ -188,7 +183,7 @@ export default function HomePage() {
 
       <ScrollReveal>
         <FullWidthSection
-          className="overflow-hidden py-16"
+          className="overflow-hidden py-12 md:py-16"
           atmosphere={
             <div className="pointer-events-none absolute -inset-x-28 -inset-y-28 bg-[radial-gradient(circle_at_78%_34%,rgba(223,165,122,0.018),transparent_24%),radial-gradient(circle_at_22%_78%,rgba(212,182,154,0.01),transparent_30%)] opacity-35 blur-[160px] dark:bg-[radial-gradient(circle_at_78%_34%,rgba(192,126,88,0.016),transparent_24%),radial-gradient(circle_at_22%_78%,rgba(148,114,96,0.01),transparent_30%)]" />
           }
@@ -248,15 +243,15 @@ export default function HomePage() {
       </ScrollReveal>
 
       <ScrollReveal>
-        <section className="relative left-1/2 w-screen -translate-x-1/2 border-y border-border/45 bg-[linear-gradient(135deg,oklch(0.2_0.018_292),oklch(0.25_0.026_320)_42%,oklch(0.31_0.05_28)_100%)] py-14">
+        <section className="relative left-1/2 w-screen -translate-x-1/2 border-y border-border/45 bg-[linear-gradient(135deg,oklch(0.2_0.018_292),oklch(0.25_0.026_320)_42%,oklch(0.31_0.05_28)_100%)] py-10 md:py-14">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_28%,rgba(255,255,255,0.06),transparent_24%),radial-gradient(circle_at_82%_26%,rgba(255,191,131,0.14),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.01),rgba(0,0,0,0.26)_100%)]" />
           <div className="section-frame relative px-5 md:px-8 lg:px-10">
             <div className="grid gap-8 lg:grid-cols-[0.98fr_1.02fr] lg:items-end">
-              <div className="space-y-5">
+              <div className="space-y-4 md:space-y-5">
                 <div className="text-xs uppercase tracking-[0.18em] text-white/72">
                   Flagship Event
                 </div>
-                <h2 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
+                <h2 className="text-3xl font-semibold tracking-tight text-white md:text-5xl">
                   ENTREPX
                 </h2>
                 <p className="max-w-[44ch] text-sm leading-7 text-white/84">
@@ -265,8 +260,8 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="space-y-5 lg:justify-self-end lg:text-right">
-                <p className="max-w-[42ch] text-base leading-8 text-white/88 lg:ml-auto">
+              <div className="space-y-4 md:space-y-5 lg:justify-self-end lg:text-right">
+                <p className="max-w-[42ch] text-sm leading-7 text-white/88 md:text-base md:leading-8 lg:ml-auto">
                   With speaker series, startup showcases, business idea competitions, and
                   interactive networking sessions, ENTREPX serves as a space for learning,
                   collaboration, and inspiration.
@@ -286,10 +281,10 @@ export default function HomePage() {
       </ScrollReveal>
 
       <ScrollReveal>
-        <section className="relative left-1/2 w-screen -translate-x-1/2 bg-surface/28 py-16">
+        <section className="relative left-1/2 w-screen -translate-x-1/2 bg-surface/28 py-10 md:py-16">
           <div className="section-frame px-5 md:px-8 lg:px-10">
-            <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
-              <div className="section-stack gap-5 lg:sticky lg:top-28">
+            <div className="grid gap-8 md:gap-9 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
+              <div className="section-stack gap-3 md:gap-4 lg:sticky lg:top-24">
                 <SectionHeading
                   label="From Curiosity to Creation"
                   title="A structured journey for student founders."
@@ -300,41 +295,36 @@ export default function HomePage() {
                   matters, build with intent, review honestly, showcase publicly, and let the
                   strongest work keep growing.
                 </p>
-                <EicFlow steps={JOURNEY_FLOW} className="max-w-[34rem] pt-2" />
+                <EicFlow steps={JOURNEY_FLOW} className="max-w-[35rem] pt-0.5 md:pt-1" />
               </div>
 
-              <div className="relative pl-8 md:pl-10">
-                <div className="absolute bottom-4 left-2 top-2 w-px bg-border/70 md:left-3" />
-                <div className="grid gap-10">
-                  {JOURNEY_STEPS.map((step, index) => (
-                    <article
-                      key={step.title}
-                      className="relative grid gap-3 md:grid-cols-[72px_minmax(0,1fr)] md:gap-6"
-                    >
-                      <div className="absolute left-0 top-1.5 md:left-0">
-                        <div className="h-5 w-5 rounded-full border border-border/80 bg-background" />
-                        <div className="absolute inset-[6px] rounded-full bg-text/80" />
-                      </div>
-                      <div className="pl-8 text-[11px] font-medium uppercase tracking-[0.22em] text-muted md:pl-0">
-                      </div>
-                      <div
-                        className={
-                          index === JOURNEY_STEPS.length - 1
-                            ? "pl-8 md:pl-0"
-                            : "border-t border-border/60 pl-8 pt-4 md:pl-0 md:pt-5"
-                        }
-                      >
-                        <h3 className="text-2xl font-semibold tracking-tight text-text">
-                          {step.title}
-                        </h3>
-                        <p className="mt-3 max-w-[50ch] text-sm leading-7 text-muted">
-                          {step.body}
-                        </p>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
+              <div className="relative">
+  <div className="absolute bottom-2 left-[0.5625rem] top-3 w-px bg-border/60" />
+  <div className="grid gap-0">
+    {JOURNEY_STEPS.map((step, index) => (
+      <article
+        key={step.title}
+        className={index === 0 ? "relative" : "relative border-t border-border/55"}
+      >
+        <div className="grid grid-cols-[1.125rem_minmax(0,1fr)] gap-x-5 py-5 md:gap-x-6 md:py-6">
+          <div className="relative mt-[0.90rem] flex justify-center">
+            <span className="block h-4 w-4 rounded-full border border-border/75 bg-background" />
+            <span className="absolute top-[0.3125rem] h-1.5 w-1.5 rounded-full bg-text/78" />
+          </div>
+
+          <div>
+            <h3 className="text-[1.6rem] font-semibold leading-[1.08] tracking-tight text-text md:text-[1.95rem]">
+              {step.title}
+            </h3>
+            <p className="mt-3 max-w-[50ch] text-sm leading-7 text-muted">
+              {step.body}
+            </p>
+          </div>
+        </div>
+      </article>
+    ))}
+  </div>
+</div>
             </div>
           </div>
         </section>
@@ -372,7 +362,7 @@ export default function HomePage() {
       </ScrollReveal> */}
 
       <ScrollReveal>
-        <section className="relative left-1/2 w-screen -translate-x-1/2 bg-surface/44 py-14">
+        <section className="relative left-1/2 w-screen -translate-x-1/2 bg-surface/44 py-10 md:py-14">
           <div className="section-frame px-5 md:px-8 lg:px-10">
             <div className="grid gap-10 border-y border-border/45 py-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
               <div className="space-y-6">
@@ -388,7 +378,7 @@ export default function HomePage() {
                   question they want to explore more seriously.
                 </p>
               </div>
-              <div className="space-y-6 lg:pl-10">
+              <div className="space-y-6 pt-1 lg:pl-10 lg:pt-16">
                 <div className="grid gap-5">
                   <div className="border-l border-border/65 pl-4 md:pl-5">
                     <div className="text-sm font-semibold text-text">Early-stage ideas are enough</div>
@@ -423,7 +413,7 @@ export default function HomePage() {
 
       <ScrollReveal>
         <FullWidthSection
-          className="overflow-hidden py-16"
+          className="overflow-hidden py-12 md:py-16"
           innerClassName="relative"
           atmosphere={
             <div className="pointer-events-none absolute -inset-x-24 -inset-y-28 bg-[radial-gradient(circle_at_82%_24%,rgba(224,150,108,0.018),transparent_24%),radial-gradient(circle_at_18%_82%,rgba(217,184,158,0.01),transparent_30%)] opacity-35 blur-[160px] dark:bg-[radial-gradient(circle_at_82%_24%,rgba(205,120,88,0.016),transparent_24%),radial-gradient(circle_at_18%_82%,rgba(146,112,94,0.01),transparent_30%)]" />

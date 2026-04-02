@@ -7,18 +7,14 @@ import { ScrollReveal } from "@/components/motion/ScrollReveal";
 export default function ContactPage() {
   return (
     <div className="page-stack relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -left-32 -right-32 -top-40 h-[34rem] opacity-45 blur-[140px] bg-[radial-gradient(circle_at_18%_16%,rgba(255,140,110,0.12),transparent_28%),radial-gradient(circle_at_78%_24%,rgba(156,128,190,0.1),transparent_30%),radial-gradient(circle_at_52%_72%,rgba(255,180,120,0.08),transparent_34%)] dark:bg-[radial-gradient(circle_at_18%_16%,rgba(198,130,94,0.11),transparent_28%),radial-gradient(circle_at_78%_24%,rgba(122,102,170,0.09),transparent_30%),radial-gradient(circle_at_52%_72%,rgba(198,150,104,0.07),transparent_34%)]" />
-        <div className="absolute -left-28 -right-28 top-[18rem] h-[42rem] opacity-30 blur-[170px] bg-[radial-gradient(circle_at_24%_34%,rgba(255,168,128,0.08),transparent_30%),radial-gradient(circle_at_82%_42%,rgba(168,138,196,0.07),transparent_32%),radial-gradient(circle_at_56%_84%,rgba(255,196,138,0.06),transparent_34%)] dark:bg-[radial-gradient(circle_at_24%_34%,rgba(198,140,104,0.07),transparent_30%),radial-gradient(circle_at_82%_42%,rgba(128,108,168,0.06),transparent_32%),radial-gradient(circle_at_56%_84%,rgba(198,156,112,0.05),transparent_34%)]" />
-        <div className="absolute inset-x-0 top-0 bottom-0 bg-[linear-gradient(180deg,transparent_0%,transparent_48%,rgba(250,246,240,0.14)_100%)] dark:bg-[linear-gradient(180deg,transparent_0%,transparent_48%,rgba(24,21,20,0.1)_100%)]" />
-      </div>
+      
       <ScrollReveal>
         <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden">
-          <div className="section-frame relative max-w-[80rem] px-6 md:px-10 lg:px-12">
+          <div className="section-frame relative max-w-[80rem] px-4 sm:px-5 md:px-10 lg:px-12">
             <section className="section-stack gap-6">
               <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
                 <div className="section-stack gap-4">
-                  <h1 className="max-w-[12ch] text-balance text-4xl font-semibold text-text md:text-5xl lg:text-6xl">
+                  <h1 className="max-w-[12ch] text-balance text-[2.2rem] font-semibold leading-[1] text-text md:text-5xl lg:text-6xl">
                     Start a conversation with EIC.
                   </h1>
                   <p className="section-copy">
@@ -47,7 +43,7 @@ export default function ContactPage() {
       </ScrollReveal>
 
       <ScrollReveal>
-        <FullWidthSection className="border-t border-border/45 bg-surface/46 py-16">
+        <FullWidthSection className="py-10 md:py-16">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
             <div className="flex h-full flex-col">
               <div className="space-y-4">
@@ -99,9 +95,23 @@ export default function ContactPage() {
       </ScrollReveal>
 
       <ScrollReveal>
-        <FullWidthSection
-          className="overflow-hidden border-t border-border/40 py-16"
-        >
+        <FullWidthSection className="relative overflow-hidden py-10 md:py-16">
+          <div className="pointer-events-none absolute inset-0 -z-10">
+            <div className="absolute left-1/2 top-[54%] h-[30rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-52 blur-[125px]
+  bg-[radial-gradient(circle,
+    rgba(236,145,155,0.28)_0%,
+    rgba(255,176,132,0.18)_30%,
+    rgba(182,146,208,0.10)_56%,
+    transparent_74%
+  )]
+  dark:bg-[radial-gradient(circle,
+    rgba(214,110,150,0.16)_0%,
+    rgba(255,130,90,0.11)_32%,
+    rgba(110,96,170,0.07)_58%,
+    transparent_76%
+  )]"
+            />
+          </div>
           <div className="grid gap-6 lg:grid-cols-[0.96fr_1.04fr]">
             <div className="grid gap-4">
               <div className="border-t border-border/70 pt-6 md:pt-8">
@@ -165,14 +175,14 @@ function InfoCard({
   body: string;
 }) {
   return (
-    <div className="rounded-3xl border border-border/60 bg-surface/78 p-5">
+    <div className="rounded-[1.4rem] border border-border/30 bg-background/6 p-5">
       <div className="flex items-start gap-3">
-        <div className="grid h-10 w-10 place-items-center rounded-2xl border border-border/60 bg-background/35">
+        <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-border/40 bg-background/12">
           <Icon className="h-4 w-4 text-accent" />
         </div>
         <div className="min-w-0">
           <div className="text-sm font-semibold text-text">{title}</div>
-          <div className="mt-1 text-sm text-muted">{body}</div>
+          <div className="mt-1 text-sm leading-6 text-muted">{body}</div>
         </div>
       </div>
     </div>

@@ -30,7 +30,7 @@ export function PageLeadImage({
   return (
     <figure
       className={cn(
-        "relative left-1/2 w-screen -translate-x-1/2 overflow-hidden border-y border-border/45",
+        "relative left-1/2 w-screen -translate-x-1/2 overflow-hidden border-border/45",
         className,
       )}
     >

@@ -24,7 +24,19 @@ export default function TeamPage() {
   const archivedPresidents: Person[] = (archiveTeam?.presidents ?? []).map(personToProfile);
 
   return (
-    <div className="page-stack">
+    <div className="page-stack page-stack--flush">
+
+      <ScrollReveal>
+        <PageLeadImage
+          className="[&>div:first-child]:min-h-[260px] [&>div:first-child]:md:min-h-[340px] [&>div:first-child]:lg:min-h-[360px]"
+          title="Team"
+          meta="Current Cohort"
+          tone="neutral"
+          image="/images/team/team.jpeg"
+          caption="The students shaping EIC through leadership, function ownership, and the day-to-day systems that hold the platform together."
+        />
+      </ScrollReveal>
+      
       <ScrollReveal>
         <section className="section-stack gap-3 lg:gap-4">
           <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start lg:gap-7">
@@ -63,16 +75,6 @@ export default function TeamPage() {
         </section>
       </ScrollReveal>
 
-      <ScrollReveal>
-        <PageLeadImage
-          className="-mt-8 md:-mt-10 lg:-mt-16 [&>div:first-child]:md:min-h-[340px] [&>div:first-child]:lg:min-h-[360px]"
-          title="Team"
-          meta="Current Cohort"
-          tone="neutral"
-          image="/images/team/team.jpeg"
-          caption="The students shaping EIC through leadership, function ownership, and the day-to-day systems that hold the platform together."
-        />
-      </ScrollReveal>
 
       <ScrollReveal>
         <section id="presidents" className="section-stack">
@@ -164,7 +166,7 @@ export default function TeamPage() {
               >
                 {archiveTeams.map((team) => (
                   <option key={team.year} value={team.year}>
-                    {team.year} Team
+                    {team.year}
                   </option>
                 ))}
               </select>
@@ -172,13 +174,19 @@ export default function TeamPage() {
           </div>
 
           {archiveTeam ? (
-            <div className="grid gap-6 border-t border-border/65 pt-6 md:grid-cols-2">
+            <div
+              className={
+                archivedPresidents.length === 1
+                  ? "flex justify-center border-t border-border/65 pt-6"
+                  : "grid gap-6 border-t border-border/65 pt-6 md:grid-cols-2"
+              }
+            >
               {archivedPresidents.map((president) => (
                 <TeamProfileCard
                   key={president.id}
                   person={president}
                   muted
-                  className="justify-self-center"
+                  className={archivedPresidents.length === 1 ? "" : "justify-self-center"}
                 />
               ))}
             </div>

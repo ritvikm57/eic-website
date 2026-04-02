@@ -48,24 +48,24 @@ export function Navbar() {
         backgroundColor: "var(--nav-scrolled-bg)",
         borderColor: "var(--nav-scrolled-border)",
         boxShadow: "var(--nav-scrolled-shadow)",
-        backdropFilter: "blur(8px)",
+        backdropFilter: "blur(12px)",
       }
     : isDarkTopState
       ? {
-          backgroundColor: "color-mix(in srgb, black 18%, transparent)",
-          borderColor: "color-mix(in srgb, white 10%, transparent)",
-          boxShadow: "0 8px 24px oklch(0.12 0.01 280 / 0.06)",
-          backdropFilter: "blur(9px)",
+          backgroundColor: "var(--nav-top-bg)",
+          borderColor: "var(--nav-top-border)",
+          boxShadow: "var(--nav-top-shadow)",
+          backdropFilter: "blur(12px)",
         }
       : {
           backgroundColor: "var(--nav-top-bg)",
           borderColor: "var(--nav-top-border)",
           boxShadow: "var(--nav-top-shadow)",
-          backdropFilter: "blur(7px)",
+          backdropFilter: "blur(12px)",
         };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-3 sm:px-6 lg:px-8">
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-2 sm:px-4 md:px-6 lg:px-8 lg:pt-3">
       <div
         className={cn(
           "mx-auto transition-[max-width,border-radius] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
@@ -74,21 +74,29 @@ export function Navbar() {
       >
         <div
           className={cn(
-            "flex h-16 items-center gap-4 border px-3 transition-[background-color,border-color,box-shadow,border-radius,backdrop-filter] duration-560 ease-[cubic-bezier(0.22,1,0.36,1)] md:px-4",
+            "flex h-13 items-center gap-2 border px-2.5 transition-[background-color,border-color,box-shadow,border-radius,backdrop-filter] duration-560 ease-[cubic-bezier(0.22,1,0.36,1)] md:h-16 md:gap-4 md:px-4",
             isScrolled ? "rounded-2xl" : "rounded-[1rem]",
           )}
           style={shellStyle}
         >
           <Link
             href="/"
-            className="flex min-w-0 items-center gap-3 rounded-full px-1 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glow/60"
+            className="flex min-w-0 flex-1 items-center gap-2 rounded-full px-1 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glow/60 md:gap-3 lg:flex-none"
             aria-label="EIC home"
           >
             <EicMark size="md" />
             <span className="min-w-0 leading-none">
               <span
                 className={cn(
-                  "block truncate text-sm font-semibold tracking-[0.1em]",
+                  "block text-sm font-semibold tracking-[0.12em] md:hidden",
+                  isDarkTopState ? "text-white" : "text-text",
+                )}
+              >
+                EIC
+              </span>
+              <span
+                className={cn(
+                  "hidden truncate text-sm font-semibold tracking-[0.1em] md:block",
                   isDarkTopState ? "text-white" : "text-text",
                 )}
               >
@@ -96,7 +104,7 @@ export function Navbar() {
               </span>
               <span
                 className={cn(
-                  "mt-0.5 block truncate text-[11px] uppercase tracking-[0.12em]",
+                  "mt-0.5 hidden truncate text-[11px] uppercase tracking-[0.12em] md:block",
                   isDarkTopState ? "text-white/62" : "text-muted",
                 )}
               >
@@ -141,9 +149,9 @@ export function Navbar() {
           <button
             type="button"
             className={cn(
-              "ml-auto inline-flex h-10 w-10 items-center justify-center rounded-full lg:hidden",
+              "ml-auto inline-flex h-8 w-8 items-center justify-center rounded-full lg:hidden",
               isDarkTopState
-                ? "border-white/12 bg-white/6 text-white"
+                ? "border-white/8 bg-white/5 text-white"
                 : "border border-border bg-surface text-text",
               "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glow/40",
             )}
@@ -162,7 +170,12 @@ export function Navbar() {
             role="dialog"
             aria-modal="true"
             aria-label="Site navigation"
-            className="mt-3 rounded-2xl border border-border bg-surface p-4 shadow-[0_10px_28px_oklch(0.12_0.01_280_/_0.08)] lg:hidden"
+            className="mt-3 rounded-xl border p-3 backdrop-blur-md lg:hidden"
+            style={{
+              backgroundColor: "var(--nav-mobile-panel-bg)",
+              borderColor: "var(--nav-mobile-panel-border)",
+              boxShadow: "var(--nav-mobile-panel-shadow)",
+            }}
           >
             <nav aria-label="Mobile" className="space-y-1">
               {PRIMARY_NAV_ITEMS.map((item) => {
@@ -172,7 +185,7 @@ export function Navbar() {
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      "flex items-center justify-between rounded-xl px-4 py-3 text-base transition-colors",
+                      "flex items-start justify-between gap-4 rounded-xl px-3.5 py-3 text-base transition-colors",
                       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glow/40",
                       item.featured && "font-medium",
                       active && item.featured && "bg-surface-elevated text-accent",
@@ -182,7 +195,7 @@ export function Navbar() {
                     )}
                   >
                     <span>{item.title}</span>
-                    <span className="text-xs uppercase tracking-[0.2em] text-muted/80">
+                    <span className="hidden text-xs uppercase tracking-[0.2em] text-muted/80 sm:block">
                       {item.description}
                     </span>
                   </Link>
@@ -190,7 +203,7 @@ export function Navbar() {
               })}
             </nav>
 
-            <div className="mt-4 flex items-center justify-between border-t border-border/70 pt-4">
+            <div className="mt-4 flex items-center justify-between gap-3 border-t border-border/70 pt-4">
               <ThemeToggle />
               <MagneticCTA href="/contact" className="accent-cta">
                 Get Involved

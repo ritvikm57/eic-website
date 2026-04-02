@@ -148,7 +148,7 @@ export const functions: TeamFunction[] = [
       { id: "content-head", name: "Bhavya", role: "Head", image: "/images/team/bhavya.JPG" },
       {
         id: "content-vice-head",
-        name: "Sai Ganesh (SAGA)",
+        name: "Sai Ganesh",
         role: "Vice Head",
         image: "/images/team/ganesh.JPG",
       },

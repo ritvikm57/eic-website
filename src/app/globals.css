@@ -40,6 +40,8 @@
 
 :root {
   --radius: 0.625rem;
+  --nav-offset-mobile: 4rem;
+  --nav-offset-desktop: 5.25rem;
 
   /* Default theme = light editorial mode. */
   --background: oklch(0.962 0.005 95);
@@ -47,7 +49,7 @@
   --surface-elevated: oklch(0.992 0.003 95);
   --border: oklch(0.78 0.006 95 / 14%);
   --text: oklch(0.24 0.015 280);
-  --muted: oklch(0.5 0.012 280 / 78%);
+  --muted: oklch(0.45 0.012 280 / 84%);
 
   --accent: oklch(0.58 0.16 32);
   --accent-foreground: oklch(0.985 0.002 95);
@@ -68,12 +70,15 @@
 
   --shadow: 0 14px 32px oklch(0.2 0.01 280 / 0.08);
   --glass: oklch(from var(--surface-elevated) l c h / 88%);
-  --nav-top-bg: oklch(from var(--surface) l c h / 0.56);
-  --nav-top-border: oklch(from var(--border) l c h / 0.1);
-  --nav-top-shadow: 0 4px 12px oklch(0.16 0.01 280 / 0.02);
+  --nav-top-bg: oklch(from var(--surface) l c h / 0.38);
+  --nav-top-border: oklch(from var(--border) l c h / 0.02);
+  --nav-top-shadow: 0 2px 10px oklch(0.16 0.01 280 / 0.008);
   --nav-scrolled-bg: oklch(from var(--surface-elevated) l c h / 0.86);
   --nav-scrolled-border: oklch(from var(--border) l c h / 0.16);
   --nav-scrolled-shadow: 0 8px 18px oklch(0.16 0.01 280 / 0.04);
+  --nav-mobile-panel-bg: oklch(from var(--surface) l c h / 0.94);
+  --nav-mobile-panel-border: oklch(from var(--border) l c h / 0.12);
+  --nav-mobile-panel-shadow: 0 10px 28px oklch(0.12 0.01 280 / 0.08);
 }
 
 html[data-theme="dark"] {
@@ -83,7 +88,7 @@ html[data-theme="dark"] {
   --surface-elevated: oklch(0.26 0.016 290);
   --border: oklch(0.7 0.012 290 / 16%);
   --text: oklch(0.94 0.006 80);
-  --muted: oklch(0.76 0.012 290 / 72%);
+  --muted: oklch(0.8 0.012 290 / 78%);
 
   --accent: oklch(0.67 0.18 28);
   --accent-foreground: oklch(0.985 0.002 95);
@@ -104,12 +109,15 @@ html[data-theme="dark"] {
 
   --shadow: 0 18px 44px oklch(0.02 0.01 280 / 0.28);
   --glass: oklch(from var(--surface-elevated) l c h / 82%);
-  --nav-top-bg: oklch(from var(--surface) l c h / 0.36);
-  --nav-top-border: oklch(from var(--border) l c h / 0.06);
-  --nav-top-shadow: 0 3px 10px oklch(0.12 0.01 280 / 0.012);
+  --nav-top-bg: oklch(from var(--surface) l c h / 0.24);
+  --nav-top-border: oklch(from var(--border) l c h / 0.03);
+  --nav-top-shadow: 0 2px 8px oklch(0.12 0.01 280 / 0.008);
   --nav-scrolled-bg: oklch(from var(--surface) l c h / 0.82);
   --nav-scrolled-border: oklch(from var(--border) l c h / 0.16);
   --nav-scrolled-shadow: 0 8px 18px oklch(0.12 0.01 280 / 0.04);
+  --nav-mobile-panel-bg: oklch(from var(--surface) l c h / 0.86);
+  --nav-mobile-panel-border: oklch(from var(--border) l c h / 0.1);
+  --nav-mobile-panel-shadow: 0 12px 30px oklch(0.04 0.01 280 / 0.2);
 }
 
 html[data-theme="light"] {
@@ -122,6 +130,7 @@ html[data-theme="light"] {
   html,
   body {
     height: 100%;
+    overflow-x: clip;
   }
   body {
     @apply bg-background text-text;
@@ -240,8 +249,8 @@ body::after {
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  padding-top: 6.5rem;
+  gap: 3rem;
+  padding-top: 5.25rem;
 }
 
 .page-stack--flush {
@@ -251,13 +260,13 @@ body::after {
 .section-stack {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .section-copy {
   max-width: 66ch;
-  font-size: 0.95rem;
-  line-height: 1.75;
+  font-size: 0.92rem;
+  line-height: 1.68;
   color: var(--muted);
 }
 
@@ -283,7 +292,7 @@ body::after {
 
 .meta-strip {
   display: grid;
-  gap: 1rem;
+  gap: 0.875rem;
   border-top: 1px solid oklch(from var(--border) l c h / 0.7);
   padding-top: 1rem;
 }
@@ -308,6 +317,20 @@ body::after {
 }
 
 @media (min-width: 768px) {
+  .page-stack {
+    gap: 4rem;
+    padding-top: 6rem;
+  }
+
+  .section-stack {
+    gap: 1.5rem;
+  }
+
+  .section-copy {
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
   .meta-strip {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
