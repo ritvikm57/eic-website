@@ -1,160 +1,155 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { EicMark } from "@/components/brand/EicMark";
+import { FullWidthSection } from "@/components/layout/FullWidthSection";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
-import { PageLeadImage } from "@/components/editorial/PageLeadImage";
-
 
 export default function ContactPage() {
   return (
-    <div className="page-stack">
+    <div className="page-stack relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -left-32 -right-32 -top-40 h-[34rem] opacity-45 blur-[140px] bg-[radial-gradient(circle_at_18%_16%,rgba(255,140,110,0.12),transparent_28%),radial-gradient(circle_at_78%_24%,rgba(156,128,190,0.1),transparent_30%),radial-gradient(circle_at_52%_72%,rgba(255,180,120,0.08),transparent_34%)] dark:bg-[radial-gradient(circle_at_18%_16%,rgba(198,130,94,0.11),transparent_28%),radial-gradient(circle_at_78%_24%,rgba(122,102,170,0.09),transparent_30%),radial-gradient(circle_at_52%_72%,rgba(198,150,104,0.07),transparent_34%)]" />
+        <div className="absolute -left-28 -right-28 top-[18rem] h-[42rem] opacity-30 blur-[170px] bg-[radial-gradient(circle_at_24%_34%,rgba(255,168,128,0.08),transparent_30%),radial-gradient(circle_at_82%_42%,rgba(168,138,196,0.07),transparent_32%),radial-gradient(circle_at_56%_84%,rgba(255,196,138,0.06),transparent_34%)] dark:bg-[radial-gradient(circle_at_24%_34%,rgba(198,140,104,0.07),transparent_30%),radial-gradient(circle_at_82%_42%,rgba(128,108,168,0.06),transparent_32%),radial-gradient(circle_at_56%_84%,rgba(198,156,112,0.05),transparent_34%)]" />
+        <div className="absolute inset-x-0 top-0 bottom-0 bg-[linear-gradient(180deg,transparent_0%,transparent_48%,rgba(250,246,240,0.14)_100%)] dark:bg-[linear-gradient(180deg,transparent_0%,transparent_48%,rgba(24,21,20,0.1)_100%)]" />
+      </div>
       <ScrollReveal>
-        <section className="section-stack gap-8">
-          <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
-            <div className="section-stack gap-5">
-              <div className="section-kicker">Contact</div>
-              <h1 className="max-w-[12ch] text-balance text-4xl font-semibold text-text md:text-5xl lg:text-6xl">
-                Start a conversation with EIC.
-              </h1>
-              <p className="section-copy">
-                Whether you want to reach out directly or bring an early-stage idea forward, the
-                contact page should feel clear, useful, and easy to act on.
-              </p>
-            </div>
-
-            <div className="meta-strip">
-              <div className="meta-item">
-                <div className="meta-label">Email</div>
-                <div className="meta-value">For collaborations, invitations, and general communication.</div>
-              </div>
-              <div className="meta-item">
-                <div className="meta-label">Ideas</div>
-                <div className="meta-value">For early concepts, rough problem statements, and student proposals.</div>
-              </div>
-              <div className="meta-item">
-                <div className="meta-label">Response flow</div>
-                <div className="meta-value">Messages should reach the relevant student lead, organizer, or platform owner.</div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
-
-      <ScrollReveal>
-        <PageLeadImage
-          title="Contact"
-          meta="Innovation Hub"
-          tone="neutral"
-          caption="Campus Presence · A page-leading banner that grounds the contact page in place, people, and the day-to-day reality of the EIC platform."
-        />
-      </ScrollReveal>
-
-      <ScrollReveal>
-        <section className="relative left-1/2 w-screen -translate-x-1/2 bg-surface/46 py-16">
-          <div className="section-frame px-5 md:px-8 lg:px-10">
-            <div className="grid gap-10 lg:grid-cols-2 lg:items-stretch">
-              <div className="flex h-full flex-col gap-5">
-                <div className="space-y-5">
-                  <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-muted">
-                    <EicMark size="sm" subtle />
-                    Contact
+        <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden">
+          <div className="section-frame relative max-w-[80rem] px-6 md:px-10 lg:px-12">
+            <section className="section-stack gap-6">
+              <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
+                <div className="section-stack gap-4">
+                  <h1 className="max-w-[12ch] text-balance text-4xl font-semibold text-text md:text-5xl lg:text-6xl">
+                    Start a conversation with EIC.
+                  </h1>
+                  <p className="section-copy">
+                    Whether you want to reach out directly or bring an early-stage idea forward, the
+                    contact page should feel clear, useful, and easy to act on.
+                  </p>
+                </div>
+                <div className="meta-strip">
+                  <div className="meta-item">
+                    <div className="meta-label">Email</div>
+                    <div className="meta-value">For collaborations, invitations, and general communication.</div>
                   </div>
-                  <h2 className="max-w-[12ch] text-3xl font-semibold text-text md:text-4xl">
-                    Send a Mail
-                  </h2>
-                  <p className="max-w-[52ch] text-sm leading-7 text-muted">
-                    Reach out directly for queries, collaborations, or general communication.
-                  </p>
-                  
-                </div>
-                <div className="pt-2 lg:mt-auto">
-                  <a
-                    href="mailto:eic@mahindrauniversity.edu.in"
-                    className="accent-cta inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium"
-                  >
-                    Send a Mail
-                  </a>
+                  <div className="meta-item">
+                    <div className="meta-label">Ideas</div>
+                    <div className="meta-value">For early concepts, rough problem statements, and student proposals.</div>
+                  </div>
+                  <div className="meta-item">
+                    <div className="meta-label">Response flow</div>
+                    <div className="meta-value">Messages should reach the relevant student lead, organizer, or platform owner.</div>
+                  </div>
                 </div>
               </div>
-
-              <div className="flex h-full flex-col gap-5 lg:pl-8">
-                <div className="space-y-5">
-                  <div className="text-xs uppercase tracking-[0.18em] text-muted">Build with EIC</div>
-                  <h2 className="max-w-[12ch] text-3xl font-semibold text-text md:text-4xl">
-                    Submit Your Idea
-                  </h2>
-                  <p className="max-w-[52ch] text-sm leading-7 text-muted">
-                    Have an idea you want to build? Share it with us and we&apos;ll help you take it
-                    forward.
-                  </p>
-                </div>
-                <div className="pt-2 lg:mt-auto">
-                  <a
-                    href="https://tally.so/r/kdWyZo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="accent-cta inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium"
-                  >
-                    Submit Your Idea
-                  </a>
-                  <p className="mt-3 text-xs leading-6 text-muted">
-                    Opens a quick submission form
-                  </p>
-                </div>
-              </div>
-            </div>
+            </section>
           </div>
         </section>
       </ScrollReveal>
 
       <ScrollReveal>
-        <section className="grid gap-6 lg:grid-cols-[0.96fr_1.04fr]">
-          <div className="grid gap-4">
-            <div className="border-t border-border/70 pt-6 md:pt-8">
-              <div className="text-xl font-semibold text-text">Contact details</div>
-              <p className="mt-3 max-w-[48ch] text-sm leading-6 text-muted">
-                Reach out directly for collaborations, invitations, campus partnerships, or general
-                queries related to EIC.
-              </p>
-              <div className="mt-6 grid gap-4">
-                <InfoCard icon={MapPin} title="Location" body="AIC Mahindra University, e-Hub Foundation Technology Center, TECH MAHINDRA, Mahindra University, Hyderabad" />
-                <InfoCard icon={Mail} title="Email" body="eic@mahindrauniversity.edu.in" />
-                <InfoCard icon={Phone} title="Phone" body="+91 84128 73562" />
+        <FullWidthSection className="border-t border-border/45 bg-surface/46 py-16">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+            <div className="flex h-full flex-col">
+              <div className="space-y-4">
+                <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-muted">
+                  <EicMark size="sm" subtle />
+                  Contact
+                </div>
+                <h2 className="max-w-[12ch] text-3xl font-semibold text-text md:text-4xl">
+                  Send a Mail
+                </h2>
+                <p className="max-w-[52ch] text-sm leading-7 text-muted">
+                  Reach out directly for queries, collaborations, or general communication.
+                </p>
               </div>
-            </div>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-1">
-            <div className="border-t border-border/70 pt-6">
-              <div className="text-xl font-semibold text-text">What happens next</div>
-              <p className="mt-3 text-sm leading-6 text-muted">
-                If the message is about joining, collaborating, or hosting something with EIC, the
-                relevant student lead or organizing team should be able to follow up with the next
-                step.
-              </p>
-              <div className="mt-4 flex flex-col gap-2 text-sm">
-                <Link className="text-text/80 hover:text-text" href="/events">
-                  Explore events
-                </Link>
-                <Link className="text-text/80 hover:text-text" href="/team">
-                  Meet the team
-                </Link>
+              <div className="mt-6 flex items-start pt-1 lg:mt-auto">
+                <a
+                  href="mailto:eic@mahindrauniversity.edu.in"
+                  className="accent-cta inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium"
+                >
+                  Send a Mail
+                </a>
               </div>
             </div>
 
-            <div className="border-t border-border/70 pt-6">
-              <div className="text-xl font-semibold text-text">Campus presence</div>
-              <p className="mt-3 text-sm leading-6 text-muted">
-                EIC is intended to feel accessible, student-led, and easy to approach whether you
-                are visiting for a build session, a founder talk, or a partnership conversation.
-              </p>
-              <div className="mt-4 text-sm text-muted">
-                AIC Mahindra University, e-Hub Foundation Technology Center, TECH MAHINDRA,
-                Mahindra University, Hyderabad
+            <div className="flex h-full flex-col lg:pl-8">
+              <div className="space-y-4">
+                <div className="text-xs uppercase tracking-[0.18em] text-muted">Build with EIC</div>
+                <h2 className="max-w-[12ch] text-3xl font-semibold text-text md:text-4xl">
+                  Submit Your Idea
+                </h2>
+                <p className="max-w-[52ch] text-sm leading-7 text-muted">
+                  Have an idea you want to build? Share it with us and we&apos;ll help you take it
+                  forward.
+                </p>
+              </div>
+              <div className="mt-6 space-y-3 pt-1 lg:mt-auto">
+                <a
+                  href="https://tally.so/r/kdWyZo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="accent-cta inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium"
+                >
+                  Submit Your Idea
+                </a>
               </div>
             </div>
           </div>
-        </section>
+        </FullWidthSection>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <FullWidthSection
+          className="overflow-hidden border-t border-border/40 py-16"
+        >
+          <div className="grid gap-6 lg:grid-cols-[0.96fr_1.04fr]">
+            <div className="grid gap-4">
+              <div className="border-t border-border/70 pt-6 md:pt-8">
+                <div className="text-xl font-semibold text-text">Contact details</div>
+                <p className="mt-3 max-w-[48ch] text-sm leading-6 text-muted">
+                  Reach out directly for collaborations, invitations, campus partnerships, or general
+                  queries related to EIC.
+                </p>
+                <div className="mt-6 grid gap-4">
+                  <InfoCard icon={MapPin} title="Location" body="AIC Mahindra University, e-Hub Foundation Technology Center, TECH MAHINDRA, Mahindra University, Hyderabad" />
+                  <InfoCard icon={Mail} title="Email" body="eic@mahindrauniversity.edu.in" />
+                  <InfoCard icon={Phone} title="Phone" body="+91 84128 73562" />
+                </div>
+              </div>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-1">
+              <div className="border-t border-border/70 pt-6">
+                <div className="text-xl font-semibold text-text">What happens next</div>
+                <p className="mt-3 text-sm leading-6 text-muted">
+                  If the message is about joining, collaborating, or hosting something with EIC, the
+                  relevant student lead or organizing team should be able to follow up with the next
+                  step.
+                </p>
+                <div className="mt-4 flex flex-col gap-2 text-sm">
+                  <Link className="text-text/80 hover:text-text" href="/events">
+                    Explore events
+                  </Link>
+                  <Link className="text-text/80 hover:text-text" href="/team">
+                    Meet the team
+                  </Link>
+                </div>
+              </div>
+
+              <div className="border-t border-border/70 pt-6">
+                <div className="text-xl font-semibold text-text">Campus presence</div>
+                <p className="mt-3 text-sm leading-6 text-muted">
+                  EIC is intended to feel accessible, student-led, and easy to approach whether you
+                  are visiting for a build session, a founder talk, or a partnership conversation.
+                </p>
+                <div className="mt-4 text-sm text-muted">
+                  AIC Mahindra University, e-Hub Foundation Technology Center, TECH MAHINDRA,
+                  Mahindra University, Hyderabad
+                </div>
+              </div>
+            </div>
+          </div>
+        </FullWidthSection>
       </ScrollReveal>
     </div>
   );

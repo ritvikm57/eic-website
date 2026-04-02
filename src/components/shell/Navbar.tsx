@@ -14,7 +14,7 @@ export function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
-  const menuId = React.useId();
+  const menuId = "mobile-nav-menu";
   const usesDarkHeroTopState = pathname === "/" || pathname.startsWith("/entrepx");
   const isDarkTopState = usesDarkHeroTopState && !isScrolled;
 
@@ -85,10 +85,10 @@ export function Navbar() {
             aria-label="EIC home"
           >
             <EicMark size="md" />
-            <span className="min-w-0">
+            <span className="min-w-0 leading-none">
               <span
                 className={cn(
-                  "block truncate text-sm font-semibold tracking-[0.16em]",
+                  "block truncate text-sm font-semibold tracking-[0.1em]",
                   isDarkTopState ? "text-white" : "text-text",
                 )}
               >
@@ -96,7 +96,7 @@ export function Navbar() {
               </span>
               <span
                 className={cn(
-                  "block truncate text-[11px] uppercase tracking-[0.22em]",
+                  "mt-0.5 block truncate text-[11px] uppercase tracking-[0.12em]",
                   isDarkTopState ? "text-white/62" : "text-muted",
                 )}
               >

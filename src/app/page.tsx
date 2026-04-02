@@ -1,12 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { EicMark } from "@/components/brand/EicMark";
 import { EicFlow } from "@/components/editorial/EicFlow";
 import { FaqList } from "@/components/editorial/FaqList";
-import { ImageSlider } from "@/components/editorial/ImageSlider";
+import { FullWidthSection } from "@/components/layout/FullWidthSection";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
-import { EditorialPhoto } from "@/components/editorial/EditorialPhoto";
 import { SectionHeading } from "@/components/editorial/SectionHeading";
 import { HeroSection } from "@/components/sections/hero-section";
 import { MagneticCTA } from "@/components/ui/MagneticCTA";
@@ -126,64 +126,52 @@ const FAQ_ITEMS = [
   },
 ] as const;
 
-const SHOWCASE_SLIDES = [
-  {
-    id: "student-demo",
-    title: "Student demos",
-    meta: "Showcase",
-    caption:
-      "A space for projects, prototypes, and startup ideas to be seen, discussed, and remembered.",
-  },
-  {
-    id: "prototype-review",
-    title: "Prototype reviews",
-    meta: "Working Session",
-    caption:
-      "Work becomes stronger when it is reviewed in public and carried forward through feedback.",
-  },
-  {
-    id: "campus-outcomes",
-    title: "Visible outcomes",
-    meta: "Campus Record",
-    caption:
-      "The platform is strongest when student effort leaves a footprint others can encounter and build on.",
-  },
-] as const;
-
 export default function HomePage() {
   return (
     <div className="page-stack page-stack--flush">
       <HeroSection />
 
       <ScrollReveal>
-        <section className="section-stack">
-          <SectionHeading
-            label="Who We Are"
-            title="A student-driven platform for entrepreneurial thinking, practical work, and campus-wide momentum."
-            subtitle="EIC Mahindra University is the official Entrepreneurship Cell of Mahindra University: a non-profit student platform built to foster entrepreneurship on campus and bridge the gap between ideas and execution."
-          />
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div className="space-y-5">
-              {WHO_WE_ARE_POINTS.map((item) => (
-                <div key={item.title} className="border-t border-border/65 pt-5">
-                  <div className="text-lg font-semibold text-text">{item.title}</div>
-                  <p className="mt-2 max-w-[50ch] text-sm leading-7 text-muted">{item.body}</p>
+        <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden">
+          <div className="pointer-events-none absolute -inset-x-24 -inset-y-28 bg-[radial-gradient(circle_at_18%_20%,rgba(236,170,132,0.02),transparent_24%),radial-gradient(circle_at_82%_18%,rgba(222,196,176,0.012),transparent_30%)] opacity-35 blur-[160px] dark:bg-[radial-gradient(circle_at_18%_20%,rgba(214,136,90,0.018),transparent_24%),radial-gradient(circle_at_82%_18%,rgba(168,136,116,0.012),transparent_30%)]" />
+          <div className="section-frame relative">
+            <div className="section-stack">
+              <SectionHeading
+                label="Who We Are"
+                title="A student-driven platform for entrepreneurial thinking, practical work, and campus-wide momentum."
+                subtitle="EIC Mahindra University is the official Entrepreneurship Cell of Mahindra University: a non-profit student platform built to foster entrepreneurship on campus and bridge the gap between ideas and execution."
+              />
+              <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+                <div className="space-y-5">
+                  {WHO_WE_ARE_POINTS.map((item) => (
+                    <div key={item.title} className="border-t border-border/65 pt-5">
+                      <div className="text-lg font-semibold text-text">{item.title}</div>
+                      <p className="mt-2 max-w-[50ch] text-sm leading-7 text-muted">{item.body}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+                <figure className="relative overflow-hidden rounded-2xl border border-border/40 dark:border-white/10">
+                  <div className="relative aspect-[4/3] min-h-[320px] w-full">
+                    <Image
+                      src="/images/about/p2.jpg"
+                      alt="Students and activity representing the EIC platform on campus"
+                      fill
+                      sizes="(min-width: 1024px) 42vw, 100vw"
+                      className="object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.12),rgba(0,0,0,0.18)_100%)]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(44,28,18,0.06),transparent_42%,rgba(22,18,16,0.08)_100%)]" />
+                  </div>
+                </figure>
+              </div>
             </div>
-            <EditorialPhoto
-              title="Who We Are"
-              meta="Campus Platform"
-              tone="neutral"
-              caption="A student-led platform where entrepreneurial thinking becomes practical through people, activity, and a culture of trying things seriously."
-            />
           </div>
         </section>
       </ScrollReveal>
 
       <ScrollReveal>
         <section className="section-stack items-center text-center">
-          <div className="w-full max-w-[56rem] rounded-[2rem] bg-surface/64 px-7 py-10 md:px-12 md:py-14">
+          <div className="w-full max-w-[56rem] rounded-[2rem] bg-surface/52 px-7 py-10 md:px-12 md:py-14">
             <div className="text-xs uppercase tracking-[0.18em] text-muted">Core statement</div>
             <p className="mx-auto mt-5 max-w-[30ch] text-xl font-medium leading-9 text-text/94 md:text-[1.55rem] md:leading-10">
               Entrepreneurship goes beyond starting a business. It is about identifying
@@ -199,54 +187,64 @@ export default function HomePage() {
       </ScrollReveal>
 
       <ScrollReveal>
-        <section className="relative left-1/2 w-screen -translate-x-1/2 bg-surface/44 py-16">
-          <div className="section-frame px-5 md:px-8 lg:px-10">
-            <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-              <div className="space-y-5">
-                <SectionHeading
-                  label="What We Do"
-                  title="We create opportunities for students to experience the entrepreneurial journey firsthand."
-                  subtitle="The work is less about presenting entrepreneurship as an idea and more about making it something students can step into, test, and participate in directly."
-                />
-                <p className="max-w-[56ch] text-sm leading-7 text-muted">
-                  At EIC, we create opportunities for students to explore and experience the
-                  entrepreneurial journey firsthand. Through a diverse range of initiatives such as
-                  hackathons, speaker sessions, business simulation games, panel discussions,
-                  seminars, networking events, and industrial visits, we introduce students to the
-                  many facets of the startup and business ecosystem.
-                </p>
-                <p className="max-w-[56ch] text-sm leading-7 text-muted">
-                  Through every event and initiative, our mission remains the same: to cultivate an
-                  entrepreneurial culture at Mahindra University and help students transform ideas
-                  into action.
-                </p>
-              </div>
+        <FullWidthSection
+          className="overflow-hidden py-16"
+          atmosphere={
+            <div className="pointer-events-none absolute -inset-x-28 -inset-y-28 bg-[radial-gradient(circle_at_78%_34%,rgba(223,165,122,0.018),transparent_24%),radial-gradient(circle_at_22%_78%,rgba(212,182,154,0.01),transparent_30%)] opacity-35 blur-[160px] dark:bg-[radial-gradient(circle_at_78%_34%,rgba(192,126,88,0.016),transparent_24%),radial-gradient(circle_at_22%_78%,rgba(148,114,96,0.01),transparent_30%)]" />
+          }
+        >
+          <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+            <div className="space-y-5">
+              <SectionHeading
+                label="What We Do"
+                title="We create opportunities for students to experience the entrepreneurial journey firsthand."
+                subtitle="The work is less about presenting entrepreneurship as an idea and more about making it something students can step into, test, and participate in directly."
+              />
+              <p className="max-w-[56ch] text-sm leading-7 text-muted">
+                At EIC, we create opportunities for students to explore and experience the
+                entrepreneurial journey firsthand. Through a diverse range of initiatives such as
+                hackathons, speaker sessions, business simulation games, panel discussions,
+                seminars, networking events, and industrial visits, we introduce students to the
+                many facets of the startup and business ecosystem.
+              </p>
+              <p className="max-w-[56ch] text-sm leading-7 text-muted">
+                Through every event and initiative, our mission remains the same: to cultivate an
+                entrepreneurial culture at Mahindra University and help students transform ideas
+                into action.
+              </p>
+            </div>
 
-              <div className="grid gap-8">
-                <EditorialPhoto
-                  title="What We Do"
-                  meta="Active Formats"
-                  tone="warm"
-                  caption="Sessions, simulations, networking, and hands-on formats should make EIC activity feel active rather than abstract."
-                />
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {EXPERIENCE_FORMATS.map((item, index) => (
-                    <div
-                      key={item}
-                      className={
-                        index === 0
-                          ? "border-t border-border/60 pt-4 sm:col-span-2"
-                          : "border-t border-border/60 pt-4"
-                      }
-                    >
-                      <div className="text-base font-semibold text-text">{item}</div>
-                    </div>
-                  ))}
+            <div className="grid gap-8">
+              <figure className="relative overflow-hidden rounded-2xl border border-border/40 dark:border-white/10">
+                <div className="relative aspect-[4/3] min-h-[320px] w-full">
+                  <Image
+                    src="/images/about/p3.jpg"
+                    alt="Students participating in EIC sessions and activities"
+                    fill
+                    sizes="(min-width: 1024px) 42vw, 100vw"
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.1),rgba(0,0,0,0.18)_100%)]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(44,28,18,0.06),transparent_42%,rgba(22,18,16,0.08)_100%)]" />
                 </div>
+              </figure>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {EXPERIENCE_FORMATS.map((item, index) => (
+                  <div
+                    key={item}
+                    className={
+                      index === 0
+                        ? "border-t border-border/60 pt-4 sm:col-span-2"
+                        : "border-t border-border/60 pt-4"
+                    }
+                  >
+                    <div className="text-base font-semibold text-text">{item}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-        </section>
+        </FullWidthSection>
       </ScrollReveal>
 
       <ScrollReveal>
@@ -288,7 +286,7 @@ export default function HomePage() {
       </ScrollReveal>
 
       <ScrollReveal>
-        <section className="relative left-1/2 w-screen -translate-x-1/2 bg-surface/42 py-16">
+        <section className="relative left-1/2 w-screen -translate-x-1/2 bg-surface/28 py-16">
           <div className="section-frame px-5 md:px-8 lg:px-10">
             <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
               <div className="section-stack gap-5 lg:sticky lg:top-28">
@@ -342,7 +340,7 @@ export default function HomePage() {
         </section>
       </ScrollReveal>
 
-      <ScrollReveal>
+      {/* <ScrollReveal>
         <section className="section-stack">
           <SectionHeading
             label="The Four Principles"
@@ -371,12 +369,12 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-      </ScrollReveal>
+      </ScrollReveal> */}
 
       <ScrollReveal>
-        <section className="relative left-1/2 w-screen -translate-x-1/2 bg-surface/44 py-16">
+        <section className="relative left-1/2 w-screen -translate-x-1/2 bg-surface/44 py-14">
           <div className="section-frame px-5 md:px-8 lg:px-10">
-            <div className="grid gap-10 border-y border-border/45 py-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div className="grid gap-10 border-y border-border/45 py-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-muted">
                   <EicMark size="sm" subtle />
@@ -424,7 +422,13 @@ export default function HomePage() {
       </ScrollReveal>
 
       <ScrollReveal>
-        <section className="section-stack">
+        <FullWidthSection
+          className="overflow-hidden py-16"
+          innerClassName="relative"
+          atmosphere={
+            <div className="pointer-events-none absolute -inset-x-24 -inset-y-28 bg-[radial-gradient(circle_at_82%_24%,rgba(224,150,108,0.018),transparent_24%),radial-gradient(circle_at_18%_82%,rgba(217,184,158,0.01),transparent_30%)] opacity-35 blur-[160px] dark:bg-[radial-gradient(circle_at_82%_24%,rgba(205,120,88,0.016),transparent_24%),radial-gradient(circle_at_18%_82%,rgba(146,112,94,0.01),transparent_30%)]" />
+          }
+        >
           <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
             <SectionHeading
               label="FAQ"
@@ -433,7 +437,7 @@ export default function HomePage() {
             />
             <FaqList items={FAQ_ITEMS} className="max-w-[52rem]" />
           </div>
-        </section>
+        </FullWidthSection>
       </ScrollReveal>
     </div>
   );

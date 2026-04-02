@@ -8,7 +8,7 @@ export function SectionNav({
   items: readonly { label: string; href: string }[];
 }) {
   return (
-    <section className="relative left-1/2 z-20 w-screen -translate-x-1/2 border-b border-border/60 bg-background/82 backdrop-blur-md">
+    <section className="relative left-1/2 z-20 w-screen -translate-x-1/2 border-b border-border/50 bg-background/76 backdrop-blur-sm">
       <div className="section-frame px-5 md:px-8 lg:px-10">
         <nav
           aria-label="EntrepX sections"
@@ -18,7 +18,7 @@ export function SectionNav({
             <Link
               key={item.href}
               href={item.href}
-              className="inline-flex shrink-0 items-center rounded-full border border-border/55 bg-surface/72 px-4 py-2 text-sm text-text/84 transition-colors hover:bg-surface-elevated hover:text-text"
+              className="inline-flex shrink-0 items-center rounded-full border border-border/45 px-4 py-2 text-sm text-text/78 transition-colors hover:border-border/70 hover:bg-surface/36 hover:text-text"
             >
               {item.label}
             </Link>

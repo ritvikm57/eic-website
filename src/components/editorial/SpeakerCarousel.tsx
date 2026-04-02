@@ -37,7 +37,7 @@ export function SpeakerCarousel({
           {[...speakers, ...speakers].map((speaker, index) => (
             <article
               key={`${speaker.id}-${index}`}
-              className="group w-[248px] shrink-0 overflow-hidden rounded-[1.55rem] border border-border/50 bg-background/72 transition-transform duration-300 hover:scale-[1.03] hover:bg-surface/82 md:w-[256px]"
+              className="group w-[248px] shrink-0 overflow-hidden rounded-[1.55rem] transition-transform duration-300 hover:scale-[1.02] md:w-[256px]"
             >
               <div className="relative aspect-[4/4.9] overflow-hidden">
                 <Image
@@ -47,7 +47,7 @@ export function SpeakerCarousel({
                   sizes="(min-width: 768px) 256px, 248px"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04)_0%,rgba(0,0,0,0)_42%,rgba(0,0,0,0.72)_100%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0)_42%,rgba(0,0,0,0.76)_100%)]" />
                 <div className="absolute inset-x-0 bottom-0 p-5">
                   <div className="text-xl font-semibold tracking-tight text-white">
                     {speaker.name}

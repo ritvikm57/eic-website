@@ -9,7 +9,7 @@ import {
 
 export type NavItem = {
   title: string;
-  href: "/" | "/about" | "/events" | "/team" | "/gallery" | "/contact" | "/entrepx";
+  href: "/" | "/events" | "/team" | "/contact" | "/entrepx";
   icon: LucideIcon;
   description?: string;
   featured?: boolean;
@@ -30,22 +30,6 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const PRIMARY_NAV_ITEMS = NAV_ITEMS.filter((item) => item.href !== "/");
-
-const TITLE_MAP: Record<NavItem["href"], string> = {
-  "/": "Home",
-  "/about": "About",
-  "/events": "Events",
-  "/team": "Team",
-  "/gallery": "Gallery",
-  "/entrepx": "EntrepX",
-  "/contact": "Contact",
-};
-
-export function titleFromPathname(pathname: string): string {
-  if (pathname === "/") return TITLE_MAP["/"];
-  const seg = `/${pathname.split("/").filter(Boolean)[0]}` as NavItem["href"];
-  return TITLE_MAP[seg] ?? "EIC";
-}
 
 export function isActivePath(pathname: string, href: string): boolean {
   if (href === "/") return pathname === "/";

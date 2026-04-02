@@ -1,8 +1,8 @@
-import type { President } from "@/data/team";
+import type { Person } from "@/data/team";
 
 export type TeamCohort = {
   year: string;
-  presidents: President[];
+  presidents: Person[];
 };
 
 export const TEAM_DATA: TeamCohort[] = [
@@ -10,14 +10,18 @@ export const TEAM_DATA: TeamCohort[] = [
     year: "2024-25",
     presidents: [
       {
-        id: "2024-president-1",
-        name: "Previous President",
-        role: "Joint President, EIC",
+        id: "archive-president-01",
+        name: "Shancy",
+        role: "President",
+        pillars: [],
+        image: "/images/team/shancy.jpeg",
       },
       {
-        id: "2024-president-2",
-        name: "Previous President",
-        role: "Joint President, EIC",
+        id: "archive-president-02",
+        name: "Vishwesh Palakuri",
+        role: "President",
+        pillars: [],
+        image: "/images/team/vishwesh.jpeg",
       },
     ],
   },
@@ -25,15 +29,12 @@ export const TEAM_DATA: TeamCohort[] = [
     year: "2023-24",
     presidents: [
       {
-        id: "2023-president-1",
+        id: "archive-president-03",
         name: "Previous President",
-        role: "Joint President, EIC",
-      },
-      {
-        id: "2023-president-2",
-        name: "Previous President",
-        role: "Joint President, EIC",
+        role: "President",
+        pillars: [],
+        image: "/placeholders/portrait-stone.svg",
       },
     ],
   },
-];
+] as const;
