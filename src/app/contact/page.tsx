@@ -6,8 +6,11 @@ import { ScrollReveal } from "@/components/motion/ScrollReveal";
 
 export default function ContactPage() {
   return (
-    <div className="page-stack relative overflow-hidden">
-      
+    <div className="page-stack relative">
+      <div className="pointer-events-none absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2">
+        <div className="absolute left-1/2 top-[34rem] h-[36rem] w-[58rem] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-74 blur-[150px] bg-[radial-gradient(circle,rgba(236,145,155,0.24)_0%,rgba(255,176,132,0.18)_28%,rgba(255,214,150,0.1)_52%,transparent_74%)] dark:opacity-60 dark:bg-[radial-gradient(circle,rgba(214,110,150,0.14)_0%,rgba(255,144,96,0.12)_30%,rgba(232,190,120,0.06)_54%,transparent_76%)]" />
+      </div>
+
       <ScrollReveal>
         <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden">
           <div className="section-frame relative max-w-[80rem] px-4 sm:px-5 md:px-10 lg:px-12">
@@ -95,23 +98,7 @@ export default function ContactPage() {
       </ScrollReveal>
 
       <ScrollReveal>
-        <FullWidthSection className="relative overflow-hidden py-10 md:py-16">
-          <div className="pointer-events-none absolute inset-0 -z-10">
-            <div className="absolute left-1/2 top-[54%] h-[30rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-52 blur-[125px]
-  bg-[radial-gradient(circle,
-    rgba(236,145,155,0.28)_0%,
-    rgba(255,176,132,0.18)_30%,
-    rgba(182,146,208,0.10)_56%,
-    transparent_74%
-  )]
-  dark:bg-[radial-gradient(circle,
-    rgba(214,110,150,0.16)_0%,
-    rgba(255,130,90,0.11)_32%,
-    rgba(110,96,170,0.07)_58%,
-    transparent_76%
-  )]"
-            />
-          </div>
+        <FullWidthSection className="py-10 md:py-16">
           <div className="grid gap-6 lg:grid-cols-[0.96fr_1.04fr]">
             <div className="grid gap-4">
               <div className="border-t border-border/70 pt-6 md:pt-8">

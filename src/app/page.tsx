@@ -123,12 +123,14 @@ const FAQ_ITEMS = [
 
 export default function HomePage() {
   return (
-    <div className="page-stack page-stack--flush">
+    <div className="page-stack page-stack--flush relative">
+      <div className="pointer-events-none absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2 bg-[radial-gradient(circle_at_14%_18%,rgba(236,160,155,0.12),transparent_24%),radial-gradient(circle_at_86%_20%,rgba(170,146,212,0.1),transparent_28%),radial-gradient(circle_at_48%_14%,rgba(255,186,140,0.06),transparent_22%)] dark:bg-[radial-gradient(circle_at_14%_18%,rgba(198,118,132,0.06),transparent_24%),radial-gradient(circle_at_86%_20%,rgba(126,104,184,0.06),transparent_28%),radial-gradient(circle_at_48%_14%,rgba(218,148,104,0.03),transparent_22%)]" />
+
       <HeroSection />
 
       <ScrollReveal>
         <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden">
-          <div className="pointer-events-none absolute -inset-x-24 -inset-y-28 bg-[radial-gradient(circle_at_18%_20%,rgba(236,170,132,0.02),transparent_24%),radial-gradient(circle_at_82%_18%,rgba(222,196,176,0.012),transparent_30%)] opacity-35 blur-[160px] dark:bg-[radial-gradient(circle_at_18%_20%,rgba(214,136,90,0.018),transparent_24%),radial-gradient(circle_at_82%_18%,rgba(168,136,116,0.012),transparent_30%)]" />
+          <div className="pointer-events-none absolute -inset-x-24 -inset-y-28 bg-[radial-gradient(circle_at_18%_20%,rgba(236,170,132,0.05),transparent_24%),radial-gradient(circle_at_82%_18%,rgba(222,196,176,0.03),transparent_30%)] opacity-35 blur-[160px] dark:bg-[radial-gradient(circle_at_18%_20%,rgba(214,136,90,0.018),transparent_24%),radial-gradient(circle_at_82%_18%,rgba(168,136,116,0.012),transparent_30%)]" />
           <div className="section-frame relative px-4 sm:px-5 md:px-8 lg:px-10">
             <div className="section-stack">
               <SectionHeading
@@ -185,7 +187,7 @@ export default function HomePage() {
         <FullWidthSection
           className="overflow-hidden py-12 md:py-16"
           atmosphere={
-            <div className="pointer-events-none absolute -inset-x-28 -inset-y-28 bg-[radial-gradient(circle_at_78%_34%,rgba(223,165,122,0.018),transparent_24%),radial-gradient(circle_at_22%_78%,rgba(212,182,154,0.01),transparent_30%)] opacity-35 blur-[160px] dark:bg-[radial-gradient(circle_at_78%_34%,rgba(192,126,88,0.016),transparent_24%),radial-gradient(circle_at_22%_78%,rgba(148,114,96,0.01),transparent_30%)]" />
+            <div className="pointer-events-none absolute -inset-x-28 -inset-y-28 bg-[radial-gradient(circle_at_78%_34%,rgba(223,165,122,0.05),transparent_24%),radial-gradient(circle_at_22%_78%,rgba(212,182,154,0.03),transparent_30%)] opacity-35 blur-[160px] dark:bg-[radial-gradient(circle_at_78%_34%,rgba(192,126,88,0.016),transparent_24%),radial-gradient(circle_at_22%_78%,rgba(148,114,96,0.01),transparent_30%)]" />
           }
         >
           <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
@@ -416,7 +418,7 @@ export default function HomePage() {
           className="overflow-hidden py-12 md:py-16"
           innerClassName="relative"
           atmosphere={
-            <div className="pointer-events-none absolute -inset-x-24 -inset-y-28 bg-[radial-gradient(circle_at_82%_24%,rgba(224,150,108,0.018),transparent_24%),radial-gradient(circle_at_18%_82%,rgba(217,184,158,0.01),transparent_30%)] opacity-35 blur-[160px] dark:bg-[radial-gradient(circle_at_82%_24%,rgba(205,120,88,0.016),transparent_24%),radial-gradient(circle_at_18%_82%,rgba(146,112,94,0.01),transparent_30%)]" />
+            <div className="pointer-events-none absolute -inset-x-24 -inset-y-28 bg-[radial-gradient(circle_at_82%_24%,rgba(224,150,108,0.05),transparent_24%),radial-gradient(circle_at_18%_82%,rgba(217,184,158,0.03),transparent_30%)] opacity-35 blur-[160px] dark:bg-[radial-gradient(circle_at_82%_24%,rgba(205,120,88,0.016),transparent_24%),radial-gradient(circle_at_18%_82%,rgba(146,112,94,0.01),transparent_30%)]" />
           }
         >
           <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">

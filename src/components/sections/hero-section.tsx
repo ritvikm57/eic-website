@@ -16,6 +16,7 @@ export function HeroSection() {
             className="object-cover object-center"
           />
         </div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_28%,rgba(240,176,164,0.12),transparent_28%),radial-gradient(circle_at_82%_22%,rgba(186,158,224,0.1),transparent_30%),radial-gradient(circle_at_50%_18%,rgba(255,198,152,0.06),transparent_24%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.75)_0%,rgba(0,0,0,0.55)_35%,rgba(0,0,0,0.2)_65%,rgba(0,0,0,0.05)_100%)]" />
 
         <div className="section-frame relative flex min-h-[500px] max-w-[80rem] items-center px-4 pb-10 pt-[calc(var(--nav-offset-mobile)+2rem)] sm:px-5 md:min-h-[620px] md:px-10 md:pb-16 md:pt-[calc(var(--nav-offset-desktop)+3rem)] lg:min-h-[700px] lg:px-12 lg:pb-20 lg:pt-[calc(var(--nav-offset-desktop)+3.75rem)]">

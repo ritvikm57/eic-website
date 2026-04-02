@@ -17,16 +17,16 @@ export default function EventsPage() {
         <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden">
           <div className="pointer-events-none absolute inset-0 -z-10">
             <Image
-              src="/images/events/team.png"
+              src="/images/events/hero2.webp"
               alt=""
               fill
               aria-hidden="true"
               sizes="100vw"
-              className="h-full w-full object-cover object-center opacity-52 blur-[1px]"
+              className="h-full w-full object-cover object-center opacity-62 blur-[0.5px]"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/82 via-black/56 to-black/14 dark:from-black/88 dark:via-black/62 dark:to-black/20" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,rgba(0,0,0,0.32),transparent_52%)] dark:bg-[radial-gradient(circle_at_20%_40%,rgba(0,0,0,0.42),transparent_52%)]" />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/12 via-transparent to-black/10 dark:from-black/22 dark:to-black/16" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/68 via-black/38 to-black/8 dark:from-black/76 dark:via-black/46 dark:to-black/12" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,rgba(0,0,0,0.22),transparent_60%)] dark:bg-[radial-gradient(circle_at_20%_40%,rgba(0,0,0,0.3),transparent_60%)]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/6 via-transparent to-black/8 dark:from-black/12 dark:to-black/10" />
             <div className="absolute inset-0 blur-[120px] bg-[radial-gradient(circle_at_78%_18%,rgba(255,140,110,0.16),transparent_26%),radial-gradient(circle_at_88%_56%,rgba(236,140,150,0.12),transparent_30%),radial-gradient(circle_at_60%_80%,rgba(238,176,126,0.12),transparent_28%)] dark:bg-[radial-gradient(circle_at_78%_18%,rgba(255,110,80,0.13),transparent_26%),radial-gradient(circle_at_88%_56%,rgba(214,110,150,0.1),transparent_30%),radial-gradient(circle_at_60%_80%,rgba(238,156,106,0.1),transparent_28%)]" />
           </div>
           <div className="section-frame relative z-10 flex min-h-[500px] items-end px-5 pb-14 pt-28 sm:px-6 md:min-h-[620px] md:px-8 md:pb-20 md:pt-32 lg:min-h-[680px] lg:px-10 lg:pb-24 lg:pt-36">
